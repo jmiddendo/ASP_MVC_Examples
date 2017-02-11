@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HD_Task_Attempt_2.Models.Manufacturer>
+@Scripts.Render("~/Scripts/AltRowHighlight.js")
+@Styles.Render("~/Content/themes/basejquery.ui.theme.css")
+
+<script type="text/javascript">
+    $(document).tooltip({ tooltipClass: "ui-tooltip" });
+</script>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            Manufacturer's Name: @Html.TextBox("SearchString","", new { title = "Please enter a manufacturer's name!" })
+            <button>Filter</button>
+        </p>
+    }
+
+<table id="tblManufacturer" class="table">
+    <thead>
+        <tr>
+            <td>Manufacturer Name</td>
+            <td>Manufacturer Contact Name</td>
+            <td>Manufacturer Address</td>
+            <td>Manufacturer Phone</td>
+            <td>Manufacturer Email</td>
+            <td>View</td>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactFName)
+                    @Html.DisplayFor(modelItem => item.contactLName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManStreet)
+                    @Html.DisplayFor(modelItem => item.ManSuburb)
+                    @Html.DisplayFor(modelItem => item.ManState)
+                    @Html.DisplayFor(modelItem => item.ManPost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManEmail)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ManID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ManID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ManID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $("#tabs").tabs();
+    });
+</script>
+
+@{
+    ViewBag.Title = "About Us";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Hi and thank you for your interest in my charity.  Here we are Warranty Repairs for <br />
+    War Heroes.  We provide cars and repair service to out war veterns.  The people have <br />
+    given so much to defend our country and our way of life that it is time to give something back. <br />
+    Many veterans have difficulties keeping a job and making bill wile reintegrating back into <br />
+    into civilian life.  So we work to take the burden of transport off of their shoulders.<br />
+    See below for our History and our FAQ...</p>
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Our History</a></li>
+        <li><a href="#tabs-2">Frequently Asked Questions</a></li>
+    </ul>
+    <div id="tabs-1">
+        <p>The vision for Warranty Repairs for War Heroes started in 2012 when the founer, Jeff Middendorf, <br />
+        attended United States Marine Corp boot camp in Parris Island, South Carolina.  I was discharged <br />
+        before I could graduate earning the title of US Marine.  This left me with a desire to assist my <br />
+        brothers and sisters in arms in anyway I could.  Afterwards, I accepted a job as a Warranty Data Analyst <br />
+        at Fiat Chrysler Automobiles managing databases similar to this one.  You take the desire and knowledger <br />
+        gained combined with the need to create a fake charity for this class and an organization is born.</p>
+    </div>
+    <div id="tabs-2">
+        <p>q)  Is this a real charity? <br />
+        a)  No, I created it for this class. <br /><br />
+        q)  Is the history real? <br />
+        a)  Yes, I really went to boot camp.<br /><br />
+        q)  Do you enjoy making up fake questions. <br />
+        a)  No, I most certainly do not.</p>
+    </div>
+</div>

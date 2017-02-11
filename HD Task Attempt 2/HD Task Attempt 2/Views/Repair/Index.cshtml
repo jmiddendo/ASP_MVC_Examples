@@ -1,0 +1,70 @@
+﻿@model IEnumerable<HD_Task_Attempt_2.Models.Repair>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="ExportSection">
+    @Html.ActionLink("Export to Csv", "ExportClientsListToCSV")
+    @Html.ActionLink("Export to Excel", "ExportClientsListToExcel")
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Repair Date</td>
+            <td>Description</td>
+            <td>Mechanic</td>
+            <td>Odometer</td>
+            <td>Cost</td>
+            <td>Price</td>
+            <td>Date Returned</td>
+            <td>Vehicle</td>
+            <td>View</td>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repMechanic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repOdometer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.repReturned)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vehicle.vehMake)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RepairID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RepairID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RepairID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

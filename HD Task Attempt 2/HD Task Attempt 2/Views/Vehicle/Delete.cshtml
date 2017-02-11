@@ -1,0 +1,88 @@
+﻿@model HD_Task_Attempt_2.Models.Vehicle
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vehMake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehMake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehTrim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehTrim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer.ManName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer.ManName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

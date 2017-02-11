@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HD_Task_Attempt_2.Models.Vehicle>
+@Scripts.Render("~/Scripts/dataTableImplementation.js")
+@Styles.Render("~/Content/Site.css")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="data">
+    <thead>
+        <tr>
+            <td>Make</td>
+            <td>Model</td>
+            <td>Year</td>
+            <td>Trim</td>
+            <td>Cost</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Manufacturer</td>
+            <td>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehMake)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehTrim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacturer.ManName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.VIN }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.VIN }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.VIN })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

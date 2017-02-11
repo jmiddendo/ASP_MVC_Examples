@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Warranty Repairs For War Heroes</h1>
+    <p class="lead">
+        <p>
+            This is the official page for the Warranty Repair For War Heroes charity.  We specialize in providing
+            discounts to veterans.
+        </p>
+    </p>
+    <p><a href="http://www.monash.edu/disclaimer-copyright" class="btn btn-primary btn-large">Monash Disclaimer &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Url.Content("~/Content/images/car-repair-362150_960_720.jpg")" alt="Warranty Repairs For War Heroes" />
+    </div>
+    <div class="col-md-4">
+        <h3>Home Page</h3><br />
+        <p>
+            The page is best viewed at 1200 * 1024 resolution.<br /><br />
+            The page was last updated on 9 October, 2016. <br />
+            The page is valid until 31 October, 2016. <br />
+        </p>
+    </div>
+    <div class="col-md-4">
+        <img src="@Url.Content("~/Content/images/car-repair-362150_960_720.jpg")" alt="Warranty Repairs For War Heroes" />
+    </div>
+</div>
+
+<br /><br /><hr /><br /><br />
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Monash Disclaimer</h2>
+        <p>
+            Monash Copyright Disclaimer
+        <p><a class="btn btn-default" href="http://www.monash.edu/disclaimer-copyright">Disclaimer &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Email Author</h2>
+        <p>Email the author of the program.</p>
+        <p><a class="btn btn-default" href="mailto:jmid3@student.monash.edu">Email Author &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Email Webmaster</h2>
+        <p>Email the webmaster of the application.</p>
+        <p><a class="btn btn-default" href="https://datatables.net/">Email Webmaster &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Export to Excel and CSB</h2>
+        <p>
+            Adam Belecki developed the code that exports the repair data to both a csv and Excel.  Clear here to view the original code.
+        </p>
+        <p><a class="btn btn-default" href="http://www.adambielecki.com/2013/05/exporting-data-to-excel-and-csv-in.html">Learn more &raquo;</a></p>
+    </div>
+</div>

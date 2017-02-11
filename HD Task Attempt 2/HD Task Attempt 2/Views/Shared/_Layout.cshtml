@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Warranty Repairs for War Heroes</title>
+    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+    @Styles.Render("~/Content/theme/base2/jquery-ui.css")
+    @Styles.Render("~/Content/theme/base2/jquery-ui.structure.css")
+    @Styles.Render("~/Content/theme/base2/jquery-ui.theme.css")
+    @Styles.Render("~/Content/theme/jquery-ui.css")
+    @Scripts.Render("~/Scripts/jquery.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.12.1.js")
+    @Scripts.Render("~/Scripts/jquery.dataTables.js")
+    @Scripts.Render("~/bundles/bootstrap.js")
+    @Scripts.Render("~/bundles/excanvas.js")
+    @Scripts.Render("~/bundles/jquery.jqplot.js")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturer")</li>
+                    <li>@Html.ActionLink("Vehicle", "Index", "Vehicle")</li>
+                    <li>@Html.ActionLink("Repair", "Index", "Repair")</li>
+                    <li>@Html.ActionLink("Documentation","Documentation","Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Jeffrey Middendorf</p>
+        </footer>
+    </div>
+
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

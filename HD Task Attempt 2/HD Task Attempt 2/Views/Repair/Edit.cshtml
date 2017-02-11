@@ -1,0 +1,98 @@
+﻿@model HD_Task_Attempt_2.Models.Repair
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Repair</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.RepairID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repDate)
+                @Html.ValidationMessageFor(model => model.repDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repDesc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repDesc)
+                @Html.ValidationMessageFor(model => model.repDesc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repMechanic, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repMechanic)
+                @Html.ValidationMessageFor(model => model.repMechanic)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repOdometer, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repOdometer)
+                @Html.ValidationMessageFor(model => model.repOdometer)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repCost, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repCost)
+                @Html.ValidationMessageFor(model => model.repCost)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repPrice, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repPrice)
+                @Html.ValidationMessageFor(model => model.repPrice)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.repReturned, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.repReturned)
+                @Html.ValidationMessageFor(model => model.repReturned)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VIN, "VIN", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("VIN", String.Empty)
+                @Html.ValidationMessageFor(model => model.VIN)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

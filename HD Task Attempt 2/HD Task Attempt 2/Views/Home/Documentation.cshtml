@@ -1,0 +1,188 @@
+﻿<script type="text/javascript">
+    $(document).ready(function(){
+        $("#accordion").accordion();
+        $("#dialog").dialog({ autoOpen: false });
+        $("#opener").click(function () {
+            $("#dialog").dialog("open");
+        });
+    });
+</script>
+
+@{
+    ViewBag.Title = "Documentation";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<button id="opener">View Disclaimer</button>
+<div id="dialog" title="Disclaimer">
+    <p>
+        This is a personal page published by the author. The ideas and information expressed <br />
+        on it have not been approved or authorised by Monash University either explicitly or <br />
+        implicitly. In no event shall Monash University be liable for any damages whatsoever <br />
+        resulting from any action arising in connection with the use of this information or <br />
+        its publication, including any action for infringement of copyright or defamation.
+    </p>
+</div>
+
+<div id="accordion">
+    <h3>Author</h3>
+    <div>
+        <p>
+            Jeffrey Middendorf - 27338096
+        </p>
+    </div>
+    <h3>Unit Number and Name</h3>
+    <div>
+        <p>
+            FIT5032 - Internet Applications
+        </p>
+    </div>
+    <h3>Unit Provider</h3>
+    <div>
+        <p>
+            Monash University, The Caulfield School of Information Technology
+        </p>
+    </div>
+    <h3>Assignment Number</h3>
+    <div>
+        <p>
+            Assignment 3 - High Distinction Task
+        </p>
+    </div>
+    <h3>Date Of Submission</h3>
+    <div>
+        <p>
+            9/10/2016
+        </p>
+    </div>
+    <h3>Tutor's Name</h3>
+    <div>
+        <p>
+            Arvind Kaur
+        </p>
+    </div>
+    <h3>Email Link To Author</h3>
+    <div>
+        <p>
+        <a class="btn btn-default" href="mailto:jmid3@student.monash.edu">Email Me</a>
+        </p>
+    </div>
+    <h3>Link to Assignment Specification</h3>
+    <div>
+        <p>
+            <a class="btn btn-default" href="http://moodle.vle.monash.edu/mod/page/view.php?id=3322015">Specification</a>
+        </p>
+    </div>
+    <h3>Copyright Image Source</h3>
+    <div>
+        <p>
+            <a href="https://pixabay.com/en/car-repair-car-workshop-repair-shop-362150/">The source website - Pixabay</a><br/>
+            <a href="https://pixabay.com/static/uploads/photo/2014/06/04/16/36/car-repair-362150_960_720.jpg">The image source</a>
+        </p>
+    </div>
+</div>
+
+    <h3>Advanced Functionality</h3>
+    <div>
+        <ul>
+            <li>
+                Export To CSV
+                <ul>
+                    <li>Allows the Repair Data to be exported to a csv file.</li>
+                    <li>This is implemented on the Repair Index page.</li>
+                    <li>This code was originally written by Adam Bielecki at <a href="http://www.adambielecki.com/2013/05/exporting-data-to-excel-and-csv-in.html">Original CSV Export Code</a></li>
+                </ul>
+            </li>
+            <li>
+                Export To Excel
+                <ul>
+                    <li>Allows the Repair Data to be exported to a Export file.</li>
+                    <li>This is implemented on the Repair Index page.</li>
+                    <li>This code was originally written by Adam Bielecki at <a href="http://www.adambielecki.com/2013/05/exporting-data-to-excel-and-csv-in.html">Original Excel Export Code</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h3>jQuery Implementation</h3>
+    <div>
+        <h5>Required</h5>
+        <ul>
+            <li>
+                Row Highlighting
+                <ul>
+                    <li>Page Containing:  Vehicle Index</li>
+                    <li>Allows for a hover background when mousing over the database table.</li>
+                    <li><a href="https://datatables.net/">JQuery DataTables WebSite</a></li>
+                </ul>
+            </li>
+            <li>
+                Alternating Row Color
+                <ul>
+                    <li>Page Containing:  Manufacturer Index</li>
+                    <li>Creates alternating colors in the view table.</li>
+                    <li><a href="https://jquery.com/">JQuery WebSite</a></li>
+                </ul>
+            </li>
+            <li>
+                Date Picker
+                <ul>
+                    <li>Page Containing:  Create Repair View</li>
+                    <li>Creates a calendar graphic that allowed for date input.</li>
+                    <li><a href="http://jqueryui.com/datepicker/">JQuery DatePicker WebSite</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h5>Additional</h5>
+        <ul>
+            <li>
+                jquery Tabs
+                <ul>
+                    <li>Page Containing: About View</li>
+                    <li>Creates a tab graphic that shows the about us and FAQ implementation.</li>
+                    <li><a href="http://jqueryui.com/tabs/">jquery Tabs Website</a></li>
+                </ul>
+            </li>
+            <li>
+                jquery Button
+                <ul>
+                    <li>Page Containing: Manufacturer Index</li>
+                    <li>The button for the search box was replaced by a jquery button.</li>
+                    <li><a href="http://jqueryui.com/button/">jquery Button Website</a></li>
+                </ul>
+            </li>
+            <li>
+                jquery Accordian
+                <ul>
+                    <li>Page Containing: Documentation</li>
+                    <li>The documentation page is now in accordian format with collapsable options.</li>
+                    <li><a href="http://jqueryui.com/accordion/">jquery Accordian Website</a></li>
+                </ul>
+            </li>
+            <li>
+                jquery Dialog
+                <ul>
+                    <li>Page Containing: Documentation</li>
+                    <li>The documentation page contains a button that will display a dialog box that shows the liability disclamer.</li>
+                    <li><a href="http://jqueryui.com/dialog/">jquery Dialog Website</a></li>
+                </ul>
+            </li>
+            <li>
+                jquery Tooltip
+                <ul>
+                    <li>Page Containing: Manufacturer Index/li>
+                    <li>There is a tooltip that states to enter a manufacturer name.</li>
+                    <li><a href="http://jqueryui.com/tooltip/">jquery Dialog Website</a></li>
+                </ul>
+            </li>
+            <li>
+                jquery DataTable
+                <ul>
+                    <li>Page Containing: Vehicles Index/li>
+                    <li>There is a per page constraint and a data table search box.</li>
+                    <li><a href="http://jqueryui.com/datepicker/">JQuery DatePicker WebSite</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+

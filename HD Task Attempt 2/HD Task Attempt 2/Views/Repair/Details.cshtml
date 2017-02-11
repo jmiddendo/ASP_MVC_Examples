@@ -1,0 +1,82 @@
+﻿@model HD_Task_Attempt_2.Models.Repair
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Repair</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.repDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repMechanic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repMechanic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repOdometer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repOdometer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repReturned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repReturned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.vehMake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.vehMake)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RepairID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

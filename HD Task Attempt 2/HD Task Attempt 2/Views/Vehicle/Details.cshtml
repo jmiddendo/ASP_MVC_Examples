@@ -1,0 +1,82 @@
+﻿@model HD_Task_Attempt_2.Models.Vehicle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vehMake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehMake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehTrim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehTrim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer.ManName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer.ManName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VIN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,91 @@
+﻿@model HD_Task_Attempt_2.Models.Manufacturer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Manufacturer</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ManName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contactFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contactFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contactLName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contactLName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManSuburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManSuburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManPost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManPost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ManID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ManID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
