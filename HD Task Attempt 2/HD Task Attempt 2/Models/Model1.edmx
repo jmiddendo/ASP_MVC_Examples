@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WarrantyDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ManID" />
+          </Key>
+          <Property Name="ManID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ManName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contactFName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contactLName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManStreet" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManSuburb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManState" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManPost" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ManEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="RepairID" />
+          </Key>
+          <Property Name="RepairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="repDate" Type="date" Nullable="false" />
+          <Property Name="repDesc" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="repMechanic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="repOdometer" Type="int" Nullable="false" />
+          <Property Name="repCost" Type="money" Nullable="false" />
+          <Property Name="repPrice" Type="money" Nullable="false" />
+          <Property Name="repReturned" Type="date" Nullable="false" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VIN" />
+          </Key>
+          <Property Name="VIN" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="vehMake" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="vehModel" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="vehYear" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="vehTrim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="vehCost" Type="money" Nullable="false" />
+          <Property Name="vehPrice" Type="money" Nullable="false" />
+          <Property Name="vehQuantity" Type="int" Nullable="false" />
+          <Property Name="ManID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Repair_Vehicle">
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+          <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="VIN" />
+            </Principal>
+            <Dependent Role="Repair">
+              <PropertyRef Name="VIN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Manufacturer">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="ManID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WarrantyDatabaseModelStoreContainer">
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Repair" EntityType="Self.Repair" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Repair_Vehicle" Association="Self.FK_Repair_Vehicle">
+            <End Role="Vehicle" EntitySet="Vehicle" />
+            <End Role="Repair" EntitySet="Repair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Manufacturer" Association="Self.FK_Vehicle_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WarrantyDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="ManID" />
+          </Key>
+          <Property Name="ManID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contactFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contactLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManSuburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManPost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Vehicles" Relationship="Self.FK_Vehicle_Manufacturer" FromRole="Manufacturer" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="RepairID" />
+          </Key>
+          <Property Name="RepairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="repDate" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="repDesc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="repMechanic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="repOdometer" Type="Int32" Nullable="false" />
+          <Property Name="repCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="repPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="repReturned" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="VIN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicle" Relationship="Self.FK_Repair_Vehicle" FromRole="Repair" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VIN" />
+          </Key>
+          <Property Name="VIN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vehMake" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vehModel" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vehYear" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vehTrim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vehCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="vehPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="vehQuantity" Type="Int32" Nullable="false" />
+          <Property Name="ManID" Type="Int32" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Vehicle_Manufacturer" FromRole="Vehicle" ToRole="Manufacturer" />
+          <NavigationProperty Name="Repairs" Relationship="Self.FK_Repair_Vehicle" FromRole="Vehicle" ToRole="Repair" />
+        </EntityType>
+        <Association Name="FK_Vehicle_Manufacturer">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="ManID" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="ManID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Repair_Vehicle">
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+          <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="VIN" />
+            </Principal>
+            <Dependent Role="Repair">
+              <PropertyRef Name="VIN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WarrantyDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Manufacturers" EntityType="Self.Manufacturer" />
+          <EntitySet Name="Repairs" EntityType="Self.Repair" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+          <AssociationSet Name="FK_Vehicle_Manufacturer" Association="Self.FK_Vehicle_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturers" />
+            <End Role="Vehicle" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Repair_Vehicle" Association="Self.FK_Repair_Vehicle">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="Repair" EntitySet="Repairs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WarrantyDatabaseModelStoreContainer" CdmEntityContainer="WarrantyDatabaseEntities">
+          <EntitySetMapping Name="Manufacturers">
+            <EntityTypeMapping TypeName="WarrantyDatabaseModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="ManID" ColumnName="ManID" />
+                <ScalarProperty Name="ManName" ColumnName="ManName" />
+                <ScalarProperty Name="contactFName" ColumnName="contactFName" />
+                <ScalarProperty Name="contactLName" ColumnName="contactLName" />
+                <ScalarProperty Name="ManStreet" ColumnName="ManStreet" />
+                <ScalarProperty Name="ManSuburb" ColumnName="ManSuburb" />
+                <ScalarProperty Name="ManState" ColumnName="ManState" />
+                <ScalarProperty Name="ManPost" ColumnName="ManPost" />
+                <ScalarProperty Name="ManPhone" ColumnName="ManPhone" />
+                <ScalarProperty Name="ManEmail" ColumnName="ManEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Repairs">
+            <EntityTypeMapping TypeName="WarrantyDatabaseModel.Repair">
+              <MappingFragment StoreEntitySet="Repair">
+                <ScalarProperty Name="RepairID" ColumnName="RepairID" />
+                <ScalarProperty Name="repDate" ColumnName="repDate" />
+                <ScalarProperty Name="repDesc" ColumnName="repDesc" />
+                <ScalarProperty Name="repMechanic" ColumnName="repMechanic" />
+                <ScalarProperty Name="repOdometer" ColumnName="repOdometer" />
+                <ScalarProperty Name="repCost" ColumnName="repCost" />
+                <ScalarProperty Name="repPrice" ColumnName="repPrice" />
+                <ScalarProperty Name="repReturned" ColumnName="repReturned" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="WarrantyDatabaseModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="vehMake" ColumnName="vehMake" />
+                <ScalarProperty Name="vehModel" ColumnName="vehModel" />
+                <ScalarProperty Name="vehYear" ColumnName="vehYear" />
+                <ScalarProperty Name="vehTrim" ColumnName="vehTrim" />
+                <ScalarProperty Name="vehCost" ColumnName="vehCost" />
+                <ScalarProperty Name="vehPrice" ColumnName="vehPrice" />
+                <ScalarProperty Name="vehQuantity" ColumnName="vehQuantity" />
+                <ScalarProperty Name="ManID" ColumnName="ManID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

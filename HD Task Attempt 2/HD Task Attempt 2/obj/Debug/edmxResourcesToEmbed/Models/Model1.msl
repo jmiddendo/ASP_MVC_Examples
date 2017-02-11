@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WarrantyDatabaseModelStoreContainer" CdmEntityContainer="WarrantyDatabaseEntities">
+    <EntitySetMapping Name="Manufacturers">
+      <EntityTypeMapping TypeName="WarrantyDatabaseModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="ManID" ColumnName="ManID" />
+          <ScalarProperty Name="ManName" ColumnName="ManName" />
+          <ScalarProperty Name="contactFName" ColumnName="contactFName" />
+          <ScalarProperty Name="contactLName" ColumnName="contactLName" />
+          <ScalarProperty Name="ManStreet" ColumnName="ManStreet" />
+          <ScalarProperty Name="ManSuburb" ColumnName="ManSuburb" />
+          <ScalarProperty Name="ManState" ColumnName="ManState" />
+          <ScalarProperty Name="ManPost" ColumnName="ManPost" />
+          <ScalarProperty Name="ManPhone" ColumnName="ManPhone" />
+          <ScalarProperty Name="ManEmail" ColumnName="ManEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repairs">
+      <EntityTypeMapping TypeName="WarrantyDatabaseModel.Repair">
+        <MappingFragment StoreEntitySet="Repair">
+          <ScalarProperty Name="RepairID" ColumnName="RepairID" />
+          <ScalarProperty Name="repDate" ColumnName="repDate" />
+          <ScalarProperty Name="repDesc" ColumnName="repDesc" />
+          <ScalarProperty Name="repMechanic" ColumnName="repMechanic" />
+          <ScalarProperty Name="repOdometer" ColumnName="repOdometer" />
+          <ScalarProperty Name="repCost" ColumnName="repCost" />
+          <ScalarProperty Name="repPrice" ColumnName="repPrice" />
+          <ScalarProperty Name="repReturned" ColumnName="repReturned" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="WarrantyDatabaseModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="vehMake" ColumnName="vehMake" />
+          <ScalarProperty Name="vehModel" ColumnName="vehModel" />
+          <ScalarProperty Name="vehYear" ColumnName="vehYear" />
+          <ScalarProperty Name="vehTrim" ColumnName="vehTrim" />
+          <ScalarProperty Name="vehCost" ColumnName="vehCost" />
+          <ScalarProperty Name="vehPrice" ColumnName="vehPrice" />
+          <ScalarProperty Name="vehQuantity" ColumnName="vehQuantity" />
+          <ScalarProperty Name="ManID" ColumnName="ManID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
