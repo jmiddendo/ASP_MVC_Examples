@@ -1,0 +1,38 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Warranty Repairs For War Heroes</h1>
+    <p class="lead"></p>
+    <div class="row">
+        <p><a href="http://www.monash.edu/disclaimer-copyright" class="btn btn-primary btn-large">Monash Disclaimer &raquo;</a></p>
+        <p><a href="mailto:jmid3@student.monash.edu" class="btn btn-primary btn-large">Email Author &raquo;</a></p>
+        <p><a href="mailto:jmid3@student.monash.edu" class="btn btn-primary btn-large">Email Webmaster &raquo;</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Export to Excel and CSB</h2>
+        <p>
+            Adam Belecki developed the code that exports the repair data to both a csv and Excel.  Clear here to view the original code.
+        </p>
+        <p><a class="btn btn-default" href="http://www.adambielecki.com/2013/05/exporting-data-to-excel-and-csv-in.html">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>JQuery</h2>
+        <p>JQuery is a javascipt framework that extends the functionality of the program.</p>
+        <p><a class="btn btn-default" href="https://jquery.com/">JQuery &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>JQuery UI</h2>
+        <p>JQuery UI provides additional functionality for items such as date picker.</p>
+        <p><a class="btn btn-default" href="https://jqueryui.com/">JQuery UI &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>JQuery Datatables</h2>
+        <p>JQuery datatable provides additional functionality for items such as row highlighting.</p>
+        <p><a class="btn btn-default" href="https://datatables.net/">JQuery Data Tables &raquo;</a></p>
+    </div>
+</div>
